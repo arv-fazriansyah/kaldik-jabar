@@ -1,0 +1,39 @@
+name: Update README Tahun Ajaran
+
+on:
+  schedule:
+    - cron: '0 0 1 7 *'  # Setiap 1 Juli jam 00:00 UTC
+  workflow_dispatch:     # Bisa dijalankan manual juga
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Hitung Tahun Ajaran
+        id: tahun
+        run: |
+          year=$(date +'%Y')
+          next=$((year+1))
+          echo "TAHUN_AJARAN=${year}/${next}" >> $GITHUB_ENV
+
+      - name: Replace Tahun Ajaran di README.md
+        run: |
+          sed -i -E "s/[0-9]{4}\/[0-9]{4}/${{ env.TAHUN_AJARAN }}/g" README.md
+
+      - name: Commit & Push if Changed
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update README.md to Tahun Ajaran ${{ env.TAHUN_AJARAN }}"
+            git push
+          fi
