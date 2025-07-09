@@ -64,6 +64,6 @@ Jika membutuhkan versi JSON mentah untuk integrasi data, silakan hubungi kami.
 
 ## 🏷️ Tag Terkait
 
-`kaldik jabar` · `kalender 2025 lengkap dengan tanggal merah` · `kalender akademik jawa barat 2025`
+`kaldik jabar` · `kalender 2025/2026 lengkap dengan tanggal merah` · `kalender akademik jawa barat 2025/2026`
 
 ---
