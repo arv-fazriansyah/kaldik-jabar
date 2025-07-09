@@ -1,8 +1,8 @@
 ---
 
-# 📘 API Kalender Akademik Jawa Barat 2023/2024
+# 📘 API Kalender Akademik Jawa Barat 2025/2026
 
-API ini menyajikan **kalender akademik Jawa Barat tahun 2023/2024** secara lengkap, termasuk **tanggal merah**, hari libur nasional, dan kegiatan sekolah.
+API ini menyajikan **kalender akademik Jawa Barat tahun 2025/2026** secara lengkap, termasuk **tanggal merah**, hari libur nasional, dan kegiatan sekolah.
 Cocok untuk diintegrasikan pada website sekolah, aplikasi pendidikan, dan dashboard akademik.
 
 ---
@@ -64,6 +64,6 @@ Jika membutuhkan versi JSON mentah untuk integrasi data, silakan hubungi kami.
 
 ## 🏷️ Tag Terkait
 
-`kaldik jabar` · `kalender 2027/2028 lengkap dengan tanggal merah` · `kalender akademik jawa barat 2021/2022`
+`kaldik jabar` · `kalender 2025/2026 lengkap dengan tanggal merah` · `kalender akademik jawa barat 2025/2026`
 
 ---
