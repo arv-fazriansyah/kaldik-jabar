@@ -26,7 +26,7 @@ jobs:
 
       - name: Replace Tahun Ajaran di README.md
         run: |
-          sed -i -E "s/[0-9]{4}\/[0-9]{4}/${{ env.TAHUN_AJARAN }}/g" README.md
+          sed -i -E "s#[0-9]{4}/[0-9]{4}#2025/2026#g" README.md
 
       - name: Commit & Push if Changed
         run: |
