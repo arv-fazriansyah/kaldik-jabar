@@ -1,8 +1,8 @@
 ---
 
-# 📘 API Kalender Akademik Jawa Barat 2024/2025
+# 📘 API Kalender Akademik Jawa Barat 2025/2026
 
-API ini menyajikan **kalender akademik Jawa Barat tahun 2024/2025** secara lengkap, termasuk **tanggal merah**, hari libur nasional, dan kegiatan sekolah.
+API ini menyajikan **kalender akademik Jawa Barat tahun 2025/2026** secara lengkap, termasuk **tanggal merah**, hari libur nasional, dan kegiatan sekolah.
 Cocok untuk diintegrasikan pada website sekolah, aplikasi pendidikan, dan dashboard akademik.
 
 ---
