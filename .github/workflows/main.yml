@@ -2,8 +2,8 @@ name: Update README Tahun Ajaran
 
 on:
   schedule:
-    - cron: '0 0 1 7 *'      # ⏰ otomatis 1 Juli setiap tahun
-  workflow_dispatch:         # ✅ juga bisa manual dari GitHub UI
+    - cron: '0 0 1 7 *'        # ✅ Otomatis setiap 1 Juli pukul 00:00 UTC
+  workflow_dispatch:           # ✅ Bisa dijalankan manual dari GitHub UI
 
 jobs:
   update-readme:
@@ -18,21 +18,27 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Hitung Tahun Ajaran
+      - name: Hitung Tahun Ajaran Sekarang
         run: |
           year=$(date +'%Y')
+          month=$(date +'%m')
+          # Jika sebelum Juli, kurangi 1 tahun karena tahun ajaran masih tahun sebelumnya
+          if [ "$month" -lt 7 ]; then
+            year=$((year - 1))
+          fi
           next=$((year + 1))
           echo "TAHUN_AJARAN=${year}/${next}" >> $GITHUB_ENV
+          echo "Tahun Ajaran: ${year}/${next}"
 
-      - name: Update README.md
+      - name: Update Tahun Ajaran di README.md
         run: |
-          sed -i -E "s#[0-9]{4}/[0-9]{4}#2025/2026#g" README.md
+          sed -i -E "s#[0-9]{4}/[0-9]{4}#${{ env.TAHUN_AJARAN }}#g" README.md
 
-      - name: Commit and Push
+      - name: Commit and Push if Changed
         run: |
           git add README.md
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "✅ Tidak ada perubahan pada README.md"
           else
             git commit -m "Update README.md to Tahun Ajaran ${{ env.TAHUN_AJARAN }}"
             git push
